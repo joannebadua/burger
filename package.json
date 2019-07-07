@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/joannebadua/burger/issues"
   },
-  "homepage": "https://github.com/joannebadua/burger#readme"
+  "homepage": "https://github.com/joannebadua/burger#readme",
+  "keywords": [],
+  "dependencies": {
+    "express": "^4.17.1",
+    "handlebars": "^4.1.2"
+  }
 }
