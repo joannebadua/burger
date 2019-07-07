@@ -42,5 +42,13 @@ var orm = {
         queryString += printQuestionMARKS (vals.length);
         queryString += ")";
         console.log(queryString);
+        connection.query(queryString, vals, function(err, result){
+            if (err) {
+                throw err;
+            }
+            cb(result);
+        });
     }
-}
+};
+//export the orm object for the models (burgs.js in models folder)
+module.exports=orm
