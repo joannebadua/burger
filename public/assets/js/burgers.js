@@ -25,6 +25,16 @@ $(".create-form").on("submit", function(event){
         name: $("#burgers").val().trim(),
         devoured: $("[name=devoured]: checked").val().trim()
     };
-    
-})
-})
+//send  POST request
+$.ajax("/burgers", {
+    type: "post",
+    data: newBurger
+}).then(
+    function() {
+        console.log("created new burger")
+        //reload page to get updated list
+        location.reload();
+    }
+);   
+});
+});
