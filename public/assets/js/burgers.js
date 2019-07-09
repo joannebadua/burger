@@ -18,7 +18,7 @@ $(function(){
         }
     );
     });
-$(".create-form").on("submit", function(event){
+$("#bur").on("submit", function(event){
     //make sure to preventDefault on a submit event
     event.preventDefault();
     var newBurger = {
@@ -27,7 +27,7 @@ $(".create-form").on("submit", function(event){
     };
 //send  POST request
 $.ajax("/burgers", {
-    type: "post",
+    type: "POST",
     data: newBurger
 }).then(
     function() {

@@ -1,27 +1,35 @@
 {{!-- //dont need doctype bc this shows up in main.handlebars which has the confic doctype, etc
-{{!-- //this is the content in the frame (main.handlebars) that is being displayed in the frame --}} --}}
-<h1>burgers</h1>
-<h2>burgers that have not been devoured</h2>
+//this is the content in the frame (main.handlebars) that is being displayed in the frame --}}
+
+
+<div id="home"> 
+<h1>Burgers</h1>
+<img src="http://www.allwhitebackground.com/images/5/Burger-Picture.png" alt="cheeseburger" style="width:250px;height:250px;">
+<img src="https://www.veggieinspired.com/wp-content/uploads/2017/05/white-bean-burgers-1.jpg" alt="spinach burger" style="width:250px;height:250px;">
+<img src="https://ifoodreal.com/wp-content/uploads/2016/05/FG-chicken-burger-recipe-2.jpg" alt="chicken burger" style="width:250px;height:250px;">
+
+<h2>Burgers that have yet to be devoured</h2>
 <ul>
     {{#each burgers }} 
     {{#unless devoured}}
-    {{!-- {{>burgers/burger-block devoured=true}} --}}
+    {{> burger-block devoured=true}}
     {{/unless}}
-    <h1>
+    {{!-- <h1>
         burgerName: {{this.name}}
-    </h1>
+    </h1> --}}
     {{/each}}
 </ul>
-
+</div>
 <h2>burgers that have been devoured</h2>
-<form class ="create-form">>
+<form class ="create-form">
     <div class="form-group">
         <label for="bur">Burger Name:</label>
         <input type="text" id="bur" name="name">
         {{!-- //id bur relevant for on-click, or reference to what the user types. (googlecrome, handlebars, jquery)
-        //grab it and shoot it with an ajax call to the back to save on sql. goes in the internet (routes, terminal, db)
-        //later goes back to front so the user sees the thing.  --}}
-    </div>
+        {{!-- //grab it and shoot it with an ajax call to the back to save on sql. goes in the internet (routes, terminal, db)
+        //later goes back to front so the user sees the thing.  --}} --}}
+   
+   </div>
     <div class="form-group">
         <label for ="devoured">
             
@@ -48,6 +56,8 @@
         ).then(function(dataFromBackEnd){
 //dataFromBackEnd just a placeholder we can name whatver we want
 console.log("datafromback", dataFromBackEnd)
-        })
-    })
+location.reload();
+        });
+    });
+
 </script>

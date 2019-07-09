@@ -4,6 +4,10 @@ li {
     background: #faebd7;
   }
   
+  #home {
+    background-image: url("./burger-picture.png");
+  }
+  
   .label {
     font-weight: bold;
   }
