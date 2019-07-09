@@ -19,20 +19,21 @@ $(function(){
         }
     );
     });
-$("#bur").on("submit", function(event){
+$("#submit").on("click", function(event){
     //make sure to preventDefault on a submit event
     event.preventDefault();
     var newBurger = {
-        burger_name: $("#burgers").val().trim(),
-        devoured: $("[name=devoured]: checked").val().trim()
+        burger_name: $("#bur").val().trim(),
+        devoured: 0
     };
+    console.log(newBurger);
 //send  POST request
 $.ajax("/burgers", {
     type: "POST",
     data: newBurger
 }).then(
-    function() {
-        console.log("created new burger")
+    function(data) {
+        console.log("created new burger at id:", data)
         //reload page to get updated list
         location.reload();
     }

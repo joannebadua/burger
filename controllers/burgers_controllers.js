@@ -20,9 +20,9 @@ router.get("/", function (req, res) {
 router.post("/burgers", function (req, res) {
     console.log("new burger in backend", req.body)
     //now we add 23-27 bc it works
-    burgers.create(["name", "devoured"], [req.body.name, req.body.devoured],
+    burgers.create(["burger_name", "devoured"], [req.body.burger_name, req.body.devoured],
         function (result) {
-            //send back the ID of the new quote
+            //send back the ID of the new burger
             res.json({ id: result.insertId });
         });
 });
